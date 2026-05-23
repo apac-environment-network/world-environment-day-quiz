@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import {
   t, UI, TIERS, getTier,
-  QUESTIONS, filterQuestions,
+  QUESTIONS, filterQuestions, shuffleQuestionOptions,
   OPTION_KEYS, LOC_NAMES,
   loadStored, saveResult, formatDate,
 } from '../src/data';
@@ -160,6 +160,35 @@ describe('filterQuestions()', () => {
     expect(r2).toHaveLength(2);
     const r3 = filterQuestions(testQs as any, 'sg');
     expect(r3).toHaveLength(3);
+  });
+});
+
+// ==========================================================
+// shuffleQuestionOptions() — option randomization
+// ==========================================================
+describe('shuffleQuestionOptions()', () => {
+  it('preserves correct answer content across shuffle', () => {
+    const q = QUESTIONS[0];
+    const shuffled = shuffleQuestionOptions(q);
+    const correctKey = shuffled.correct;
+    expect(shuffled.en.options[correctKey]).toBe(q.en.options[q.correct]);
+    expect(shuffled.ja.options[correctKey]).toBe(q.ja.options[q.correct]);
+    expect(shuffled.zh.options[correctKey]).toBe(q.zh.options[q.correct]);
+  });
+
+  it('has all 4 options after shuffle', () => {
+    const shuffled = shuffleQuestionOptions(QUESTIONS[0]);
+    expect(Object.keys(shuffled.en.options)).toEqual(['A', 'B', 'C', 'D']);
+    expect(Object.keys(shuffled.ja.options)).toEqual(['A', 'B', 'C', 'D']);
+    expect(Object.keys(shuffled.zh.options)).toEqual(['A', 'B', 'C', 'D']);
+  });
+
+  it('does not lose or duplicate option values', () => {
+    const q = QUESTIONS[0];
+    const shuffled = shuffleQuestionOptions(q);
+    const vals = Object.values(q.en.options).sort();
+    const shufVals = Object.values(shuffled.en.options).sort();
+    expect(shufVals).toEqual(vals);
   });
 });
 

@@ -269,6 +269,7 @@
       <button class="btn-primary" x-show="answered" @click="nextQuestion" style="flex:1;"
               x-text="currentIndex + 1 >= questions.length ? t('seeResults') : t('next')"></button>
     </div>
+    <p class="footer-note" x-text="t('footer')"></p>
   </div>
 
   <!-- ========== RESULTS ========== -->

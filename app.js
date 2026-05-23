@@ -20,6 +20,26 @@
   function filterQuestions(all, loc) {
     return all.filter((q) => q.locale === "all" || Array.isArray(q.locale) && q.locale.includes(loc));
   }
+  function shuffleQuestionOptions(q) {
+    const keys = ["A", "B", "C", "D"];
+    const shuffled = [...keys];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    const rebuildOptions = (opts) => {
+      const r = {};
+      for (let i = 0; i < 4; i++) r[keys[i]] = opts[shuffled[i]];
+      return r;
+    };
+    return {
+      ...q,
+      correct: keys[shuffled.indexOf(q.correct)],
+      en: { ...q.en, options: rebuildOptions(q.en.options) },
+      ja: { ...q.ja, options: rebuildOptions(q.ja.options) },
+      zh: { ...q.zh, options: rebuildOptions(q.zh.options) }
+    };
+  }
   function loadStored() {
     try {
       const raw = localStorage.getItem("wed2026_quiz");
@@ -77,7 +97,7 @@
           tier_3_desc: "Perhaps avoid the sustainability portion of the client call.",
           copyScore: "Copy score for Teams",
           retakeQuiz: "Retake quiz (for fun \u2014 first score is saved)",
-          footer: "All facts verified against official sources. Jokes not regulated by your managing director.",
+          footer: "Brought to you by APAC Environment Networks",
           shareText: "World Environment Day Quiz \u2014 {office} office \xB7 Score: {score}/{total}",
           copied: "Copied \u2014 paste it into Teams"
         },
@@ -116,7 +136,7 @@
           tier_3_desc: "\u30B5\u30B9\u30C6\u30CA\u30D3\u30EA\u30C6\u30A3\u306E\u8A71\u984C\u306F\u30AF\u30E9\u30A4\u30A2\u30F3\u30C8\u306E\u524D\u3067\u51FA\u3055\u306A\u3044\u3088\u3046\u306B\u3002",
           copyScore: "\u30B9\u30B3\u30A2\u3092Teams\u306B\u30B3\u30D4\u30FC",
           retakeQuiz: "\u518D\u53D7\u9A13\uFF08\u304A\u8A66\u3057 \u2014 \u6700\u521D\u306E\u30B9\u30B3\u30A2\u304C\u4FDD\u5B58\u3055\u308C\u307E\u3059\uFF09",
-          footer: "\u5168\u554F\u984C\u3001\u516C\u7684\u8CC7\u6599\u3067\u691C\u8A3C\u6E08\u307F\u3002\u30B8\u30E7\u30FC\u30AF\u306F MD \u306E\u627F\u8A8D\u3092\u5F97\u3066\u3044\u307E\u305B\u3093\u3002",
+          footer: "APAC\u74B0\u5883\u30CD\u30C3\u30C8\u30EF\u30FC\u30AF\u304C\u304A\u5C4A\u3051\u3057\u307E\u3059",
           shareText: "\u4E16\u754C\u74B0\u5883\u30C7\u30FC\u30AF\u30A4\u30BA \u2014 {office}\u30AA\u30D5\u30A3\u30B9 \xB7 \u30B9\u30B3\u30A2: {score}/{total}",
           copied: "\u30B3\u30D4\u30FC\u3057\u307E\u3057\u305F \u2014 Teams\u306B\u8CBC\u308A\u4ED8\u3051\u3066\u304F\u3060\u3055\u3044"
         },
@@ -155,7 +175,7 @@
           tier_3_desc: "\u5EFA\u8BAE\u5728\u5BA2\u6237\u9762\u524D\u907F\u514D\u8C08\u8BBA\u53EF\u6301\u7EED\u53D1\u5C55\u8BDD\u9898\u3002",
           copyScore: "\u590D\u5236\u6210\u7EE9\u5230Teams",
           retakeQuiz: "\u91CD\u505A\uFF08\u4EC5\u4F9B\u5A31\u4E50 \u2014 \u9996\u6B21\u6210\u7EE9\u5DF2\u4FDD\u5B58\uFF09",
-          footer: "\u6240\u6709\u4E8B\u5B9E\u5747\u7ECF\u5B98\u65B9\u6765\u6E90\u9A8C\u8BC1\u3002\u73A9\u7B11\u672A\u7ECF\u603B\u7ECF\u7406\u6279\u51C6\u3002",
+          footer: "\u7531 APAC \u73AF\u5883\u7F51\u7EDC\u4E3A\u60A8\u5448\u732E",
           shareText: "\u4E16\u754C\u73AF\u5883\u65E5\u7B54\u9898 \u2014 {office}\u529E\u516C\u5BA4 \xB7 \u6210\u7EE9: {score}/{total}",
           copied: "\u5DF2\u590D\u5236 \u2014 \u7C98\u8D34\u5230Teams\u4E2D\u5206\u4EAB"
         }
@@ -326,7 +346,7 @@
           startQuiz() {
             if (!this.location) return;
             this.lang = this._langPick;
-            this.questions = filterQuestions(QUESTIONS, this.location);
+            this.questions = filterQuestions(QUESTIONS, this.location).map(shuffleQuestionOptions);
             this.currentIndex = 0;
             this.answers = [];
             this.answered = false;

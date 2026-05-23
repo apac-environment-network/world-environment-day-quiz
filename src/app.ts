@@ -1,6 +1,6 @@
 import {
   t, UI, Lang, LocCode, Screen, Question, Answer, TierDef, QText,
-  getTier, filterQuestions, formatDate, saveResult, loadStored,
+  getTier, filterQuestions, formatDate, saveResult, loadStored, shuffleQuestionOptions,
   QUESTIONS, OPTION_KEYS, LOC_NAMES,
 } from './data';
 
@@ -69,7 +69,7 @@ document.addEventListener('alpine:init', () => {
     startQuiz(): void {
       if (!this.location) return;
       this.lang = this._langPick;
-      this.questions = filterQuestions(QUESTIONS, this.location);
+      this.questions = filterQuestions(QUESTIONS, this.location).map(shuffleQuestionOptions);
       this.currentIndex = 0;
       this.answers = [];
       this.answered = false;
