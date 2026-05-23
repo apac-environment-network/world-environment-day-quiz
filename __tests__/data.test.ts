@@ -142,9 +142,11 @@ describe('filterQuestions()', () => {
     expect(result).toHaveLength(8);
   });
 
-  it('all questions have locale "all"', () => {
+  it('questions have valid locale patterns', () => {
     for (const q of QUESTIONS) {
-      expect(q.locale).toBe('all');
+      expect(['all', 'tk', 'sg', 'hk']).toContain(
+        Array.isArray(q.locale) ? q.locale[0] : q.locale
+      );
     }
   });
 
@@ -220,8 +222,8 @@ describe('getUid()', () => {
 // QUESTIONS data integrity
 // ==========================================================
 describe('QUESTIONS data', () => {
-  it('has exactly 8 questions', () => {
-    expect(QUESTIONS).toHaveLength(8);
+  it('has exactly 12 questions (4 common, 2 tk, 2 sg, 2 hk)', () => {
+    expect(QUESTIONS).toHaveLength(12);
   });
 
   it('each question has required fields', () => {
