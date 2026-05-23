@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import {
   t, UI, TIERS, getTier,
-  QUESTIONS, filterQuestions, shuffleQuestionOptions,
+  QUESTIONS, filterQuestions, shuffleQuestionOptions, getUid,
   OPTION_KEYS, LOC_NAMES,
   loadStored, saveResult, formatDate,
 } from '../src/data';
@@ -189,6 +189,30 @@ describe('shuffleQuestionOptions()', () => {
     const vals = Object.values(q.en.options).sort();
     const shufVals = Object.values(shuffled.en.options).sort();
     expect(shufVals).toEqual(vals);
+  });
+});
+
+// ==========================================================
+// getUid() — per-browser UUID
+// ==========================================================
+describe('getUid()', () => {
+  beforeEach(() => { localStorage.clear(); });
+  it('returns a string on first call', () => {
+    const uid = getUid();
+    expect(typeof uid).toBe('string');
+    expect(uid.length).toBeGreaterThan(10);
+  });
+  it('returns the same ID on subsequent calls (sticky)', () => {
+    const a = getUid();
+    const b = getUid();
+    expect(a).toBe(b);
+  });
+  it('persists across reloads (localStorage)', () => {
+    const a = getUid();
+    // simulate page reload
+    localStorage.setItem('wed2026_uid', a);
+    const b = getUid();
+    expect(a).toBe(b);
   });
 });
 

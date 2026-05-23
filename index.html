@@ -296,6 +296,17 @@
 
 </div>
 
+<script>
+// ------ Response Logging Config ------
+// Set enabled:true and paste your PAT (issues:write scope only)
+// to collect quiz responses as GitHub issues.
+window.GITHUB_CONFIG = {
+  enabled: false,
+  token: 'YOUR_PAT_HERE',
+  owner: 'apac-environment-network',
+  repo: 'world-environment-day-quiz',
+};
+</script>
 <script defer src="app.js"></script>
 <script defer src="alpine.min.js"></script>
 </body>

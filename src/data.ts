@@ -302,3 +302,16 @@ export function formatDate(iso: string): string {
   const s = [1,21,31].includes(day) ? 'st' : [2,22].includes(day) ? 'nd' : [3,23].includes(day) ? 'rd' : 'th';
   return `${day}${s} ${month} ${year}`;
 }
+
+function generateUuid(): string {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = Math.random() * 16 | 0;
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+}
+
+export function getUid(): string {
+  let uid = localStorage.getItem('wed2026_uid');
+  if (!uid) { uid = generateUuid(); localStorage.setItem('wed2026_uid', uid); }
+  return uid;
+}

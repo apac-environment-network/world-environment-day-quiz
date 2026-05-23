@@ -1,6 +1,6 @@
 import {
   t, UI, Lang, LocCode, Screen, Question, Answer, TierDef, QText,
-  getTier, filterQuestions, formatDate, saveResult, loadStored, shuffleQuestionOptions,
+  getTier, filterQuestions, formatDate, saveResult, loadStored, shuffleQuestionOptions, getUid,
   QUESTIONS, OPTION_KEYS, LOC_NAMES,
 } from './data';
 
@@ -8,6 +8,43 @@ declare const Alpine: {
   data: (name: string, fn: () => Record<string, unknown>) => void;
   readonly version: string;
 };
+
+// ------- Response logging (GitHub Issues) ------
+interface GitHubConfig {
+  enabled: boolean;
+  token: string;
+  owner: string;
+  repo: string;
+}
+declare const window: Window & { GITHUB_CONFIG?: GitHubConfig };
+
+async function submitQuizResponse(
+  location: string, answers: Answer[], score: number, lang: string,
+  uid: string, tz: string, platform: string
+): Promise<void> {
+  const cfg = window.GITHUB_CONFIG;
+  if (!cfg?.enabled) return;
+  const locLabel = t(UI[lang as Lang] ?? UI.en, LOC_NAMES[location as LocCode]?.[0] ?? location);
+  const answersBlock = answers.map((a, i) =>
+    `### Q${i + 1} (id:${a.qid})\n**Selected:** ${a.selected} — ${a.isCorrect ? 'Correct' : `Wrong (correct: ${a.correct})`}`
+  ).join('\n\n');
+  const meta = `**User:** \`${uid}\`\n**Office:** ${locLabel}\n**Score:** ${score}/8\n**Language:** ${lang}\n**Timezone:** ${tz}\n**Platform:** ${platform}\n**Screen:** ${window.innerWidth}x${window.innerHeight}\n**Time:** ${new Date().toISOString()}`;
+  try {
+    await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}/issues`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${cfg.token}`,
+        'Content-Type': 'application/json',
+        Accept: 'application/vnd.github+json',
+      },
+      body: JSON.stringify({
+        title: `Quiz: ${locLabel} — ${score}/8 (${uid.slice(0, 8)})`,
+        body: `${meta}\n\n---\n${answersBlock}`,
+        labels: ['quiz-response'],
+      }),
+    });
+  } catch { /* fire-and-forget */ }
+}
 
 const saved = loadStored();
 
@@ -140,6 +177,10 @@ document.addEventListener('alpine:init', () => {
       saveResult(this.location!, this.answers, score, this.lang);
       this.savedResult = true;
       this.savedTimestamp = formatDate(new Date().toISOString());
+      const uid = getUid();
+      const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      const platform = navigator.platform;
+      submitQuizResponse(this.location!, this.answers, score, this.lang as string, uid, tz, platform);
       this.screen = 'result';
     },
 

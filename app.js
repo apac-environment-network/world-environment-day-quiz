@@ -57,6 +57,20 @@
     const s = [1, 21, 31].includes(day) ? "st" : [2, 22].includes(day) ? "nd" : [3, 23].includes(day) ? "rd" : "th";
     return `${day}${s} ${month} ${year}`;
   }
+  function generateUuid() {
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+      const r = Math.random() * 16 | 0;
+      return (c === "x" ? r : r & 3 | 8).toString(16);
+    });
+  }
+  function getUid() {
+    let uid = localStorage.getItem("wed2026_uid");
+    if (!uid) {
+      uid = generateUuid();
+      localStorage.setItem("wed2026_uid", uid);
+    }
+    return uid;
+  }
   var UI, TIERS, Q1_EXPLAINER_EN, Q1_EXPLAINER_JA, Q1_EXPLAINER_ZH, Q2_EXPLAINER_EN, Q2_EXPLAINER_JA, Q2_EXPLAINER_ZH, Q3_EXPLAINER_EN, Q3_EXPLAINER_JA, Q3_EXPLAINER_ZH, Q4_EXPLAINER_EN, Q4_EXPLAINER_JA, Q4_EXPLAINER_ZH, Q5_EXPLAINER_EN, Q5_EXPLAINER_JA, Q5_EXPLAINER_ZH, Q6_EXPLAINER_EN, Q6_EXPLAINER_JA, Q6_EXPLAINER_ZH, Q7_EXPLAINER_EN, Q7_EXPLAINER_JA, Q7_EXPLAINER_ZH, Q8_EXPLAINER_EN, Q8_EXPLAINER_JA, Q8_EXPLAINER_ZH, QUESTIONS, OPTION_KEYS, LOC_NAMES;
   var init_data = __esm({
     "src/data.ts"() {
@@ -289,6 +303,42 @@
   var require_app = __commonJS({
     "src/app.ts"() {
       init_data();
+      async function submitQuizResponse(location, answers, score, lang, uid, tz, platform) {
+        const cfg = window.GITHUB_CONFIG;
+        if (!cfg?.enabled) return;
+        const locLabel = t(UI[lang] ?? UI.en, LOC_NAMES[location]?.[0] ?? location);
+        const answersBlock = answers.map(
+          (a, i) => `### Q${i + 1} (id:${a.qid})
+**Selected:** ${a.selected} \u2014 ${a.isCorrect ? "Correct" : `Wrong (correct: ${a.correct})`}`
+        ).join("\n\n");
+        const meta = `**User:** \`${uid}\`
+**Office:** ${locLabel}
+**Score:** ${score}/8
+**Language:** ${lang}
+**Timezone:** ${tz}
+**Platform:** ${platform}
+**Screen:** ${window.innerWidth}x${window.innerHeight}
+**Time:** ${(/* @__PURE__ */ new Date()).toISOString()}`;
+        try {
+          await fetch(`https://api.github.com/repos/${cfg.owner}/${cfg.repo}/issues`, {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${cfg.token}`,
+              "Content-Type": "application/json",
+              Accept: "application/vnd.github+json"
+            },
+            body: JSON.stringify({
+              title: `Quiz: ${locLabel} \u2014 ${score}/8 (${uid.slice(0, 8)})`,
+              body: `${meta}
+
+---
+${answersBlock}`,
+              labels: ["quiz-response"]
+            })
+          });
+        } catch {
+        }
+      }
       var saved = loadStored();
       document.addEventListener("alpine:init", () => {
         Alpine.data("quiz", () => ({
@@ -410,6 +460,10 @@
             saveResult(this.location, this.answers, score, this.lang);
             this.savedResult = true;
             this.savedTimestamp = formatDate((/* @__PURE__ */ new Date()).toISOString());
+            const uid = getUid();
+            const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            const platform = navigator.platform;
+            submitQuizResponse(this.location, this.answers, score, this.lang, uid, tz, platform);
             this.screen = "result";
           },
           // ---- share ----
