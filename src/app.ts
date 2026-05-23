@@ -211,6 +211,15 @@ document.addEventListener('alpine:init', () => {
       this._lastKey = null;
     },
 
+    resetQuiz(): void {
+      localStorage.removeItem('wed2026_quiz');
+      localStorage.removeItem('wed2026_uid');
+      this.savedResult = false;
+      this.savedTimestamp = '';
+      this.retakeQuiz();
+      this.showToast(t(UI[this.lang] ?? UI.en, 'resetQuiz'));
+    },
+
     showToast(msg: string): void {
       this.toastText = msg;
       this.toastVisible = true;
