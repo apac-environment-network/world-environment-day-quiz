@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Environment Day 2026 Quiz — APAC Edition</title>
+<meta name="description" content="An 8-question quiz on Japanese sustainable finance and environmental policy, for World Environment Day. Tokyo, Singapore, and Hong Kong offices.">
+<meta property="og:title" content="World Environment Day 2026 Quiz — APAC Edition">
+<meta property="og:description" content="8 questions on sustainable finance and environmental policy. How well do you know your ESG?">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  [x-cloak] { display: none !important; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #f5f3ef; color: #2d2d2d;
+    min-height: 100dvh;
+    display: flex; align-items: center; justify-content: center;
+    padding: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+  }
+  #app {
+    width: 100%; max-width: 620px;
+    background: #fff; border: 1px solid #e0ddd6; border-radius: 2px;
+    padding: 2.5rem 2rem;
+  }
+  h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.75rem; font-weight: 400; line-height: 1.25; color: #1a1a1a; margin-bottom: 0.25rem;
+  }
+  .kicker {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.12em; color: #999; margin-bottom: 0.5rem; font-weight: 500;
+  }
+  .byline {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.8rem; color: #888; font-style: italic;
+  }
+  .brand-bar {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.15em;
+    color: #1a7a4c; font-weight: 600; padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0ddd6; margin-bottom: 1rem;
+  }
+  hr { border: none; border-top: 1px solid #e0ddd6; margin: 1.5rem 0; }
+
+  button {
+    display: block; width: 100%; padding: 0.85rem 1.25rem;
+    border: none; border-radius: 2px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem; font-weight: 500; cursor: pointer;
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn-primary { background: #1a1a1a; color: #fff; }
+  .btn-primary:hover { background: #333; }
+  .btn-primary:disabled { background: #e0ddd6; color: #aaa; cursor: not-allowed; }
+  .btn-outline { background: transparent; border: 1px solid #d4d0c8; color: #555; }
+  .btn-outline:hover { background: #f5f3ef; }
+  .btn-share { background: #1a1a1a; color: #fff; margin-top: 0.5rem; }
+  .btn-share:hover { background: #333; }
+  .btn-text { background: transparent; color: #888; font-size: 0.75rem; padding: 0.4rem 0; display: inline; width: auto; border: none; }
+  .btn-text:hover { color: #555; text-decoration: underline; }
+
+  .lang-toggle { display: flex; border: 1px solid #d4d0c8; border-radius: 2px; overflow: hidden; margin-bottom: 1.5rem; }
+  .lang-btn {
+    flex: 1; padding: 0.6rem 0; background: #fff; color: #888;
+    border: none; border-radius: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.8rem; font-weight: 500; cursor: pointer; text-align: center;
+    transition: background 0.15s, color 0.15s;
+  }
+  .lang-btn + .lang-btn { border-left: 1px solid #d4d0c8; }
+  .lang-btn.active { background: #1a1a1a; color: #fff; }
+  .lang-btn:hover:not(.active) { background: #f5f3ef; }
+
+  .location-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.5rem; margin-bottom: 2rem; }
+  .location-card {
+    background: #fff; border: 1px solid #d4d0c8; border-radius: 2px;
+    padding: 1rem 0.75rem; text-align: center; cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .location-card:hover { border-color: #999; }
+  .location-card.selected { border-color: #1a1a1a; background: #1a1a1a; color: #fff; }
+  .location-card.selected .location-city { color: #aaa; }
+  .location-name { font-weight: 600; font-size: 0.85rem; display: block; margin-bottom: 0.1rem; }
+  .location-city { font-size: 0.7rem; color: #999; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  .progress-wrap { display: flex; gap: 6px; margin-bottom: 2rem; }
+  .progress-dot { flex: 1; height: 3px; border-radius: 1px; background: #e0ddd6; transition: background 0.3s; }
+  .progress-dot.correct { background: #1a7a4c; }
+  .progress-dot.wrong   { background: #c1292e; }
+  .progress-dot.current  { background: #1a1a1a; }
+
+  .q-num {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: #999; margin-bottom: 0.75rem; font-weight: 500;
+  }
+  .q-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.2rem; font-weight: 400; line-height: 1.45; color: #1a1a1a; margin-bottom: 1.5rem;
+  }
+
+  .option-btn {
+    background: #fff; border: 1px solid #d4d0c8; color: #2d2d2d;
+    text-align: left; margin-bottom: 0.4rem; border-radius: 2px;
+    padding: 0.9rem 1rem; font-weight: 400;
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    line-height: 1.45; font-size: 0.9rem;
+  }
+  .option-btn .letter {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 24px; height: 24px; border-radius: 2px;
+    background: #f0ede8; color: #888;
+    font-weight: 600; font-size: 0.75rem; flex-shrink: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  .option-btn:hover:not(.locked) { border-color: #999; }
+  .option-btn.correct { border-color: #1a7a4c; background: #f2f8f4; }
+  .option-btn.correct .letter { background: #1a7a4c; color: #fff; }
+  .option-btn.wrong { border-color: #c1292e; background: #fef5f5; }
+  .option-btn.wrong .letter { background: #c1292e; color: #fff; }
+  .option-btn.locked { pointer-events: none; }
+
+  .reveal-box {
+    margin-top: 1.25rem; padding: 1rem 1.1rem; border-left: 3px solid #1a7a4c;
+    line-height: 1.6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem; color: #444; background: #fafaf9;
+  }
+  .reveal-box.incorrect { border-left-color: #c1292e; background: #fdf8f8; }
+  .reveal-box .verdict {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 600; font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 0.4rem; display: block;
+  }
+  .reveal-box .verdict.correct { color: #1a7a4c; }
+  .reveal-box .verdict.wrong { color: #c1292e; }
+
+  .explainer-box {
+    margin-top: 0.75rem; padding: 0.85rem 1rem;
+    border-left: 3px solid #666; background: #f5f3ef;
+    line-height: 1.55; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.82rem; color: #555;
+  }
+  .explainer-box .src-label {
+    font-weight: 600; font-size: 0.65rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: #999; display: block; margin-bottom: 0.3rem;
+  }
+
+  .score-badge {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 3.5rem; font-weight: 400; text-align: center; line-height: 1; color: #1a1a1a;
+  }
+  .score-label {
+    text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.85rem; color: #888; margin-bottom: 1.5rem;
+  }
+  .tier-box {
+    text-align: center; padding: 1.25rem; margin-bottom: 1.5rem;
+    line-height: 1.5; background: #fafaf9; border: 1px solid #e0ddd6; border-radius: 2px;
+  }
+  .tier-box .tier-title { font-family: Georgia, 'Times New Roman', serif; font-size: 1.1rem; font-weight: 400; margin-bottom: 0.25rem; }
+  .tier-box .tier-desc { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.85rem; color: #888; }
+
+  .toast {
+    position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    background: #1a1a1a; color: #fff; padding: 0.75rem 1.5rem; border-radius: 2px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 500; font-size: 0.85rem;
+    opacity: 0; transition: opacity 0.2s; pointer-events: none; z-index: 10;
+  }
+  .toast.show { opacity: 1; }
+  .footer-note { text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 0.7rem; color: #bbb; margin-top: 1.5rem; }
+
+  .mt-1 { margin-top: 1rem; }
+  .mt-2 { margin-top: 1.5rem; }
+  .mb-1 { margin-bottom: 1rem; }
+  .mb-2 { margin-bottom: 1.5rem; }
+  .text-center { text-align: center; }
+  .inline-btn { display: inline-block; width: auto; font-size: 0.75rem; padding: 0.4rem 0.8rem; }
+
+  @media (max-width: 500px) {
+    #app { padding: 1.75rem 1.25rem; }
+    h1 { font-size: 1.4rem; }
+    .q-title { font-size: 1.05rem; }
+    .location-grid { grid-template-columns: 1fr; gap: 0.35rem; }
+    .location-card { display: flex; align-items: center; gap: 0.5rem; text-align: left; padding: 0.7rem 1rem; }
+    .location-name { margin-bottom: 0; }
+    .score-badge { font-size: 2.75rem; }
+  }
+</style>
+</head>
+<body>
+<noscript>
+  <div style="max-width:500px;margin:2rem auto;padding:2rem;font-family:sans-serif;text-align:center;background:#fff;border:1px solid #ccc;line-height:1.6;">
+    <p><strong>JavaScript required</strong></p>
+    <p>This quiz requires JavaScript to run. Please enable it in your browser settings or contact your IT service desk.</p>
+  </div>
+</noscript>
+
+<div id="app" x-data="quiz" x-cloak>
+
+  <!-- ========== LANGUAGE SCREEN ========== -->
+  <div x-show="screen === 'lang'" x-cloak>
+    <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#777;font-size:0.85rem;margin-bottom:1rem;">Language / 言語 / 语言</p>
+    <div class="lang-toggle">
+      <button class="lang-btn" :class="{active: _langPick==='en'}" @click="_langPick='en'; screen='start'">English</button>
+      <button class="lang-btn" :class="{active: _langPick==='ja'}" @click="_langPick='ja'; screen='start'">日本語</button>
+      <button class="lang-btn" :class="{active: _langPick==='zh'}" @click="_langPick='zh'; screen='start'">中文</button>
+    </div>
+  </div>
+
+  <!-- ========== START SCREEN ========== -->
+  <div x-show="screen === 'start'" x-cloak>
+    <button class="btn-outline inline-btn mb-2" @click="screen='lang'">&#x2190; <span x-text="t('changeLanguage')"></span></button>
+    <div class="kicker" x-text="t('kicker')"></div>
+    <h1 x-text="t('title')"></h1>
+    <p class="byline mb-2" x-text="t('byline')"></p>
+    <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#777;font-size:0.85rem;margin-bottom:1.25rem;" x-text="t('selectOffice')"></p>
+    <div class="location-grid">
+      <div class="location-card" :class="{selected: location==='tk'}" @click="selectLocation('tk')">
+        <span class="location-name" x-text="t('office_tk_name')"></span>
+        <span class="location-city" x-text="t('office_tk_city')"></span>
+      </div>
+      <div class="location-card" :class="{selected: location==='sg'}" @click="selectLocation('sg')">
+        <span class="location-name" x-text="t('office_sg_name')"></span>
+        <span class="location-city" x-text="t('office_sg_city')"></span>
+      </div>
+      <div class="location-card" :class="{selected: location==='hk'}" @click="selectLocation('hk')">
+        <span class="location-name" x-text="t('office_hk_name')"></span>
+        <span class="location-city" x-text="t('office_hk_city')"></span>
+      </div>
+    </div>
+    <button class="btn-primary" :disabled="!location" @click="startQuiz" x-text="t('startQuiz')"></button>
+    <p class="footer-note" x-text="t('privacyNote')"></p>
+  </div>
+
+  <!-- ========== QUIZ ========== -->
+  <div x-show="screen === 'quiz'" x-cloak>
+    <div class="brand-bar">World Environment Day 2026 Quiz</div>
+    <div class="q-num" x-text="t('questionN', {n: currentIndex + 1, total: questions.length})"></div>
+    <div class="progress-wrap">
+      <template x-for="(q, i) in questions">
+        <div class="progress-dot" :class="progressClass(i)" :key="i"></div>
+      </template>
+    </div>
+    <div class="q-title" x-html="currentText.title"></div>
+    <template x-for="key in OPTION_KEYS">
+      <button class="option-btn" :class="optionClass(key)" :disabled="answered" @click="selectAnswer(key)" :key="key">
+        <span class="letter" x-text="key"></span>
+        <span x-html="currentText.options[key]"></span>
+      </button>
+    </template>
+    <div x-show="answered" x-ref="reveal">
+      <div class="reveal-box" :class="{incorrect: !lastAnswerCorrect}">
+        <span class="verdict" :class="lastAnswerCorrect ? 'correct' : 'wrong'"
+              x-text="lastAnswerCorrect ? t('correct') : t('incorrect', {answer: currentQuestion.correct})"></span>
+        <span x-html="currentText.joke"></span>
+      </div>
+      <div x-show="showExplainer" class="explainer-box">
+        <span class="src-label" x-text="t('source')"></span>
+        <span x-html="currentText.explainer"></span>
+      </div>
+      <button class="btn-text mt-1" @click="toggleExplainer" x-text="showExplainer ? '&#x25B2; Hide source' : '&#x25BC; Show source'"></button>
+    </div>
+    <div style="display:flex;gap:0.5rem;margin-top:1.5rem;">
+      <button class="btn-outline" x-show="currentIndex > 0 && !answered" @click="goBack" style="flex:0 0 auto;width:auto;">&#x2190; <span x-text="t('back')"></span></button>
+      <button class="btn-primary" x-show="answered" @click="nextQuestion" style="flex:1;"
+              x-text="currentIndex + 1 >= questions.length ? t('seeResults') : t('next')"></button>
+    </div>
+  </div>
+
+  <!-- ========== RESULTS ========== -->
+  <div x-show="screen === 'result'" x-cloak>
+    <div class="kicker text-center" x-text="t('kicker')"></div>
+    <h1 class="text-center mb-1" x-text="savedResult ? t('savedResult') : t('yourResults')"></h1>
+    <div class="text-center" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:0.8rem;color:#999;margin-bottom:1.25rem;text-transform:uppercase;letter-spacing:0.06em;" x-show="resultLocation" x-text="resultLocation"></div>
+    <p class="byline text-center" x-show="savedResult" x-text="t('takenOn', {date: savedTimestamp})"></p>
+    <div class="score-badge" x-text="score + '/' + totalQuestions"></div>
+    <div class="score-label" x-text="t('outOf', {n: totalQuestions})"></div>
+    <div class="tier-box">
+      <div class="tier-title" :style="{color: tier.color}" x-text="t(tier.titleKey)"></div>
+      <div class="tier-desc" x-text="t(tier.descKey)"></div>
+    </div>
+    <hr>
+    <button class="btn-share" @click="copyScore" x-text="t('copyScore')"></button>
+    <button class="btn-outline mt-1" @click="retakeQuiz" x-text="t('retakeQuiz')"></button>
+    <p class="footer-note" x-text="t('footer')"></p>
+  </div>
+
+  <div class="toast" :class="{show: toastVisible}" x-text="toastText"></div>
+
+</div>
+
+<script defer src="app.js"></script>
+<script defer src="alpine.min.js"></script>
+</body>
+</html>

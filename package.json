@@ -1,0 +1,22 @@
+{
+  "name": "03-quiz-app",
+  "version": "1.0.0",
+  "description": "World Environment Day 2026 Quiz",
+  "scripts": {
+    "build": "npx esbuild src/app.ts --bundle --format=iife --outfile=app.js",
+    "test": "npx vitest run",
+    "test:watch": "npx vitest",
+    "coverage": "npx vitest run --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.1.7",
+    "esbuild": "^0.28.0",
+    "jsdom": "^29.1.1",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.7"
+  }
+}
