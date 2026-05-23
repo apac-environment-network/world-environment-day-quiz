@@ -274,13 +274,15 @@
 
   <!-- ========== RESULTS ========== -->
   <div x-show="screen === 'result'" x-cloak>
-    <div class="kicker text-center" x-text="t('kicker')"></div>
-    <h1 class="text-center mb-1" x-text="savedResult ? t('savedResult') : t('yourResults')"></h1>
-    <div class="text-center" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:0.8rem;color:#999;margin-bottom:1.25rem;text-transform:uppercase;letter-spacing:0.06em;" x-show="resultLocation" x-text="resultLocation"></div>
-    <p class="byline text-center" x-show="savedResult" x-text="t('takenOn', {date: savedTimestamp})"></p>
+    <h1 class="text-center" style="font-family:Georgia,'Times New Roman',serif;font-size:1.25rem;font-weight:400;color:#1a1a1a;margin-bottom:0.35rem;" x-text="savedResult ? t('savedResult') : t('yourResults')"></h1>
+    <div class="text-center" style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:0.78rem;color:#999;margin-bottom:2rem;line-height:1.6;">
+      <template x-if="resultLocation"><span x-text="resultLocation"></span></template>
+      <template x-if="resultLocation && savedResult"><span>&nbsp;&middot;&nbsp;</span></template>
+      <template x-if="savedResult"><span x-text="t('takenOn', {date: savedTimestamp})"></span></template>
+    </div>
     <div class="score-badge" x-text="score + '/' + totalQuestions"></div>
     <div class="score-label" x-text="t('outOf', {n: totalQuestions})"></div>
-    <div class="tier-box">
+    <div class="tier-box" style="margin-top:1.25rem;">
       <div class="tier-title" :style="{color: tier.color}" x-text="t(tier.titleKey)"></div>
       <div class="tier-desc" x-text="t(tier.descKey)"></div>
     </div>
