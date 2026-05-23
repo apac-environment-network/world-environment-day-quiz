@@ -19,7 +19,7 @@
     -webkit-font-smoothing: antialiased;
   }
   #app {
-    width: 100%; max-width: 620px;
+    width: 100%; max-width: 620px; min-height: 420px;
     background: #fff; border: 1px solid #e0ddd6; border-radius: 2px;
     padding: 2.5rem 2rem;
   }
@@ -262,10 +262,11 @@
         <span class="src-label" x-text="t('source')"></span>
         <span x-html="currentText.explainer"></span>
       </div>
-      <button class="btn-text mt-1" @click="toggleExplainer" x-text="showExplainer ? '&#x25B2; Hide source' : '&#x25BC; Show source'"></button>
+      <button class="btn-text mt-1" @click="toggleExplainer" x-text="showExplainer ? t('hideSource') : t('showSource')"></button>
     </div>
     <div style="display:flex;gap:0.5rem;margin-top:1.5rem;">
-      <button class="btn-outline" x-show="currentIndex > 0 && !answered" @click="goBack" style="flex:0 0 auto;width:auto;">&#x2190; <span x-text="t('back')"></span></button>
+      <button class="btn-outline" @click="goBack" style="flex:0 0 auto;width:auto;"
+              :style="currentIndex > 0 && !answered ? '' : 'visibility:hidden'">&#x2190; <span x-text="t('back')"></span></button>
       <button class="btn-primary" x-show="answered" @click="nextQuestion" style="flex:1;"
               x-text="currentIndex + 1 >= questions.length ? t('seeResults') : t('next')"></button>
     </div>
@@ -302,7 +303,7 @@
 // Set enabled:true and populate _tk with token chunks (grep-safe).
 // The token is assembled at runtime — no single string in source.
 window.GITHUB_CONFIG = {
-  enabled: true,
+  enabled: false,
   _tk: ['github_p','at_11CEO','YCCY0v0VE3Pigh61F_k','KFYBtUoa2Dnqx','068WMmh97w7bQ','HtgNeejt0Aa0ZDcA6HM4M23Dl5mmzn5L'],
   owner: 'apac-environment-network',
   repo: 'world-environment-day-quiz',

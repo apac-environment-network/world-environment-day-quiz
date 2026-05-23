@@ -43,7 +43,7 @@ async function submitQuizResponse(
         labels: ['quiz-response'],
       }),
     });
-  } catch { /* fire-and-forget */ }
+  } catch (e) { console.error('Quiz response submission failed:', e); }
 }
 
 const saved = loadStored();
@@ -61,7 +61,7 @@ document.addEventListener('alpine:init', () => {
     answered: false,
     lastAnswerCorrect: false,
     savedResult: saved != null,
-    savedTimestamp: saved ? formatDate(saved.timestamp) : '',
+    savedTimestamp: saved ? formatDate(saved.timestamp, saved.lang) : '',
     _lastKey: null as string | null,
     toastVisible: false,
     toastText: '',
@@ -176,7 +176,7 @@ document.addEventListener('alpine:init', () => {
       const score = this.answers.filter((a: Answer) => a.isCorrect).length;
       saveResult(this.location!, this.answers, score, this.lang);
       this.savedResult = true;
-      this.savedTimestamp = formatDate(new Date().toISOString());
+      this.savedTimestamp = formatDate(new Date().toISOString(), this.lang as Lang);
       const uid = getUid();
       const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
       const platform = navigator.platform;
@@ -202,7 +202,6 @@ document.addEventListener('alpine:init', () => {
 
     retakeQuiz(): void {
       this.screen = 'lang';
-      this._langPick = 'en';
       this.location = null;
       this.questions = [];
       this.currentIndex = 0;
