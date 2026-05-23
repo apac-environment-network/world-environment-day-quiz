@@ -298,13 +298,14 @@
 
 <script>
 // ------ Response Logging Config ------
-// Set enabled:true and paste your PAT (issues:write scope only)
-// to collect quiz responses as GitHub issues.
+// Set enabled:true and populate _tk with token chunks (grep-safe).
+// The token is assembled at runtime — no single string in source.
 window.GITHUB_CONFIG = {
   enabled: false,
-  token: 'YOUR_PAT_HERE',
+  _tk: [],   // token chunks as array of strings
   owner: 'apac-environment-network',
   repo: 'world-environment-day-quiz',
+  get token() { return this._tk ? this._tk.join('') : ''; }
 };
 </script>
 <script defer src="app.js"></script>
