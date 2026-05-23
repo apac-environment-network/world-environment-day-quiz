@@ -5,7 +5,11 @@ import {
 } from './data';
 
 declare const Alpine: {
-  data: (name: string, fn: () => Record<string, unknown>) => void;
+  // Using any here is intentional: Alpine.data() provides runtime `this`
+  // context that TypeScript strict mode cannot statically verify.
+  // npx esbuild (not tsc) compiles this project.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  data: (name: string, fn: () => Record<string, any>) => void;
   readonly version: string;
 };
 

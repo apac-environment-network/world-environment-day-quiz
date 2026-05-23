@@ -307,10 +307,10 @@ export function shuffleQuestionOptions(q: Question): Question {
   };
   return {
     ...q,
-    correct: keys[shuffled.indexOf(q.correct)],
-    en: { ...q.en, options: rebuildOptions(q.en.options) },
-    ja: { ...q.ja, options: rebuildOptions(q.ja.options) },
-    zh: { ...q.zh, options: rebuildOptions(q.zh.options) },
+    correct: keys[shuffled.indexOf(q.correct as OptionKey)] ?? q.correct,
+    en: { ...q.en, options: rebuildOptions(q.en.options) as { A: string; B: string; C: string; D: string } },
+    ja: { ...q.ja, options: rebuildOptions(q.ja.options) as { A: string; B: string; C: string; D: string } },
+    zh: { ...q.zh, options: rebuildOptions(q.zh.options) as { A: string; B: string; C: string; D: string } },
   };
 }
 
@@ -328,8 +328,9 @@ export function formatDate(iso: string, lang?: Lang): string {
   const day = d.getDate(), year = d.getFullYear();
   const locale = lang === 'ja' ? 'ja-JP' : lang === 'zh' ? 'zh-CN' : 'en-GB';
   const month = d.toLocaleString(locale, { month: 'long' });
-  const s = [1,21,31].includes(day) ? 'st' : [2,22].includes(day) ? 'nd' : [3,23].includes(day) ? 'rd' : 'th';
-  return `${day}${s} ${month} ${year}`;
+  const isEn = !lang || lang === 'en';
+  const s = isEn ? ([1,21,31].includes(day) ? 'st' : [2,22].includes(day) ? 'nd' : [3,23].includes(day) ? 'rd' : 'th') : '';
+  return isEn ? `${day}${s} ${month} ${year}` : `${month} ${day}, ${year}`;
 }
 
 function generateUuid(): string {

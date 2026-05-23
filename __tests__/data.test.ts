@@ -222,7 +222,7 @@ describe('getUid()', () => {
 // QUESTIONS data integrity
 // ==========================================================
 describe('QUESTIONS data', () => {
-  it('has exactly 12 questions (4 common, 2 tk, 2 sg, 2 hk)', () => {
+  it('has exactly 12 questions (6 common, 2 tk, 2 sg, 2 hk)', () => {
     expect(QUESTIONS).toHaveLength(12);
   });
 
