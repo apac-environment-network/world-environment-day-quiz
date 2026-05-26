@@ -249,7 +249,6 @@
       <div class="reveal-box" :class="{incorrect: !lastAnswerCorrect}">
         <span class="verdict" :class="lastAnswerCorrect ? 'correct' : 'wrong'"
               x-text="lastAnswerCorrect ? t('correct') : t('incorrect', {answer: currentQuestion.correct})"></span>
-        <span x-html="currentText.joke"></span>
       </div>
       <div x-show="showExplainer" class="explainer-box">
         <span class="src-label" x-text="t('source')"></span>
