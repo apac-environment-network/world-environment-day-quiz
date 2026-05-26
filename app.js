@@ -303,7 +303,6 @@ ${answersBlock}`,
           toastText: "",
           showExplainer: false,
           OPTION_KEYS,
-          SHOW_BRAND: true,
           // ---- helpers ----
           t(key, vars) {
             return t(UI[this.lang] ?? UI.en, key, vars);

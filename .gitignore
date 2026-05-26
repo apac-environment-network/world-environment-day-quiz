@@ -1,11 +1,5 @@
 node_modules/
 coverage/
-.beads/
-.claude/
-RESEARCH-GROWTH.md
-RESEARCH-JAPAN.md
-
-# Beads / Dolt files (added by bd init)
 .dolt/
 *.db
-.beads-credential-key
+.beads/

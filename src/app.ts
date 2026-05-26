@@ -71,8 +71,7 @@ document.addEventListener('alpine:init', () => {
     toastText: '',
     showExplainer: false,
     OPTION_KEYS,
-    SHOW_BRAND: true,
-
+  
     // ---- helpers ----
     t(key: string, vars?: Record<string, string | number>): string {
       return t(UI[this.lang] ?? UI.en, key, vars);
