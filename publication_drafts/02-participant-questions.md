@@ -1,14 +1,13 @@
-# 🌏 World Environment Day Quiz — Japan Edition
+# 🌏 World Environment Day Quiz — Japan Edition (PARTICIPANT COPY)
 
-**8 questions. Multiple choice. Answers on the next slide / next chat message.**
-
-*Paste these one at a time into Teams chat, or advance through on a shared screen.*
+**DRAFT — Paste these questions one by one into MS Teams chat.**
+**Questions only — no answers, no jokes.**
 
 ---
 
-### Q1 — ORIGIN STORY
+### Q1
 
-World Environment Day (June 5) exists because one country proposed it to the UN in 1972. Which country?
+**World Environment Day (June 5) exists because one country co-proposed it to the UN in 1972. Which country?**
 
 A) Japan
 B) Sweden — they hosted the conference, so they called dibs
@@ -17,88 +16,80 @@ D) A coalition of nations who definitely weren't Japan
 
 ---
 
-### Q2 — OFFICE THERMOSTAT WARS
+### Q2
 
-Japan's *Cool Biz* campaign mandated office air conditioners be set to what temperature?
+**Japan's <em>Cool Biz</em> campaign recommended office air conditioners be set to what target temperature?**
 
-A) 28°C (82.4°F)
-B) "Whatever Facilities decides, and they're not budging"
-C) 24°C, with a passive-aggressive email from HR if you touch it
-D) The exact temperature at which your Managing Director removes his tie, whichever comes first
+A) 24°C, because 28°C was deemed too warm for wearing a full suit
+B) The temperature that perfectly balances comfort with passive-aggressive thermostat wars
+C) 28°C (82.4°F)
+D) Whatever Facilities decides, and they are not budging
 
 ---
 
-### Q3 — THE FOURTH "R"
+### Q3
 
-The Japanese concept *Mottainai* (roughly: "what a waste!") adds a fourth "R" to the classic Reduce, Reuse, Recycle. What is it?
+**The Japanese concept <em>Mottainai</em> ("what a waste!") adds a fourth "R" to the classic Reduce, Reuse, Recycle. What is it?**
 
-A) Respect
-B) Regret — the emotion you feel when Compliance rejects your expense report
+A) Regret — the emotion you feel when you accidentally throw away a recyclable
+B) Respect
 C) Returns — as in, "our ESG fund's quarterly"
-D) Restructuring — Japan's favourite corporate verb
+D) Restructuring — applicable to anything, anywhere, forever
 
 ---
 
-### Q4 — THE 85% THAT ISN'T
+### Q4
 
-Japan reports a plastic recycling rate of ~85%. Under international standards for *actual material* recycling (not incineration), the real figure is approximately:
+**Japan reports a plastic recycling rate of about 85%. Under international standards for <em>actual material</em> recycling, the real figure is approximately:**
 
-A) ~24%
+A) A rate that varies depending on how you define <em>recycling</em> and <em>plastic</em>
 B) ~62% — and the missing 23% was reclassified as "strategic thermal redeployment"
 C) ~85%, because Japan defined recycling to include burning things for electricity
-D) A rate that "varies depending on how you define the word *recycling*, the word *plastic*, and the word *Japan*"
+D) ~24%
 
 ---
 
-### Q5 — FOSSIL FUEL FINANCING
+### Q5
 
-In 2024, Japan's three megabanks (MUFG, SMBC, Mizuho) accounted for what share of *global* fossil fuel financing?
+**As of 2024, Japan accounts for approximately what share of the global climate transition bond market?**
 
-A) ~12% (USD 106 billion)
-B) "A figure we're not at liberty to disclose, but rest assured our net-zero commitments remain on track"
-C) ~3%, because they also financed some solar panels, which mathematically cancels out the LNG terminals
-D) Enough to make your ESG team's quarterly slide deck physically vibrate with tension
+A) ~70%
+B) ~25%, though mostly limited to the domestic retail market
+C) ~5%, because Japan historically prefers equity financing for decarbonisation
+D) 0% — Japan missed the filing deadline for the UN's climate taxonomy
 
 ---
 
-### Q6 — BIG NUMBER ENERGY
+### Q6
 
-Japan's Green Transformation (GX) strategy estimates how much combined public-private investment is needed over the next 10 years?
+**Japan's Green Transformation (GX) strategy estimates how much combined public-private investment over the next 10 years?**
 
-A) 150 trillion yen (~USD 1 trillion)
+A) 50 trillion yen, plus whatever is left in the "miscellaneous" fund
 B) "More than last year's budget but less than the GDP of a medium-sized planet"
-C) 50 trillion yen, plus whatever's left in the discretionary slush fund marked 'miscellaneous industrial policy'
-D) The exact amount that sounds plausible in a pitch book but impossible in a board meeting
+C) 150 trillion yen (~USD 1 trillion)
+D) The exact amount that sounds plausible in a pitch book
 
 ---
 
-### Q7 — CAN YOU CALL IT "ESG"?
+### Q7
 
-Under Japan's FSA rules, can a fund market itself as an "ESG Fund" if its *only* ESG strategy is negative screening (e.g., "we don't invest in tobacco")?
+**Under Japan's FSA rules, can a fund market itself as an "ESG Fund" if its <em>only</em> strategy is negative screening (e.g., "we do not invest in tobacco")?**
 
-A) No — ESG must be a primary selection factor with disclosed targets
-B) Yes, provided the fund name also includes the word "sustainable," "green," or "future" — ideally all three
-C) Yes, because negative screening technically qualifies under the 2018 guidance, the 2021 addendum, and the unwritten rule that nobody reads fund prospectuses
-D) No, unless the marketing deck uses a green colour palette and a photo of a wind turbine, in which case the FSA may grant a provisional aesthetic waiver
-
----
-
-### Q8 — SOVEREIGN PIONEER
-
-In February 2024, Japan became the world's first sovereign issuer of climate *transition* bonds. How does the government plan to repay the ¥20 trillion debt?
-
-A) Revenue from future GX-ETS carbon auctions and the 2028 fossil fuel levy
-B) "Growth will pay for it" — a sentence that has never backfired in the history of sovereign debt
-C) By issuing additional transition bonds to repay the original transition bonds, in a beautiful ouroboros of sustainable finance
-D) The bonds mature in 2050 alongside the net-zero target, at which point the problem becomes someone else's bonus calculation
+A) Yes, provided the fund name also includes "sustainable" or "green"
+B) No — ESG must be a primary selection factor with disclosed targets
+C) Yes, because negative screening qualifies under the 2018 guidance
+D) No, unless the marketing deck uses a green colour palette and wind turbines
 
 ---
 
-### HOW TO DELIVER THIS IN TEAMS
+### Q8
 
-| Method | What you do |
-|--------|-------------|
-| **Chat-based** | Paste one question at a time. Wait 30–60s. Paste the answer line. Repeat. |
-| **Screen share** | Put each question on its own PowerPoint slide. Advance to reveal answer. |
-| **Forms poll** | Create a Forms quiz with these Qs. Auto-scores it. |
-| **Hybrid** | Read questions aloud. People type A/B/C/D in chat. You reveal correct letter. |
+**Japan became the world's first sovereign issuer of climate transition bonds, in February 2024. How will the ¥20 trillion debt be repaid?**
+
+A) By issuing additional transition bonds to repay the original ones
+B) "Growth will pay for it" — a sentence that has never backfired in sovereign debt
+C) The bonds mature in 2050 alongside the net-zero target
+D) Revenue from future GX-ETS carbon auctions and the 2028 fossil fuel levy
+
+---
+

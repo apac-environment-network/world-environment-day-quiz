@@ -20,9 +20,9 @@
 
 ---
 
-### Q1 — ORIGIN STORY
+### Q1
 
-World Environment Day (June 5) exists because one country proposed it to the UN in 1972. Which country?
+**World Environment Day (June 5) exists because one country co-proposed it to the UN in 1972. Which country?**
 
 A) Japan
 B) Sweden — they hosted the conference, so they called dibs
@@ -31,112 +31,128 @@ D) A coalition of nations who definitely weren't Japan
 
 **Correct answer: A) Japan**
 
-> Japan proposed it. Sweden hosted the conference. The UN said yes. And now your desk has a recycling bin under it. Circle of life.
+> Japan and Senegal jointly proposed it. Sweden hosted the conference. The UN said yes. And now your desk has a recycling bin under it. Circle of life.
+
+> Japan proposed World Environment Day at the 1972 UN Conference on the Human Environment in Stockholm. Sweden hosted; Japan proposed; the UN General Assembly agreed. June 5 has since become the UN’s flagship campaign for environmental awareness, observed by over 150 countries each year. What your MD won’t tell you: the proposal was partly a diplomatic move — Japan wanted to show environmental leadership after facing international criticism over industrial pollution (Minamata, itai-itai). Every ESG initiative has an origin story; most involve a crisis someone tried to get ahead of.<br><br><a href="https://www.worldenvironmentday.global/about/history" target="_blank" rel="noopener">→ UN World Environment Day — official history</a>
 
 ---
 
-### Q2 — OFFICE THERMOSTAT WARS
+### Q2
 
-Japan's *Cool Biz* campaign mandated office air conditioners be set to what temperature?
+**Japan's <em>Cool Biz</em> campaign recommended office air conditioners be set to what target temperature?**
 
-A) 28°C (82.4°F)
-B) "Whatever Facilities decides, and they're not budging"
-C) 24°C, with a passive-aggressive email from HR if you touch it
-D) The exact temperature at which your Managing Director removes his tie, whichever comes first
+A) 24°C, because 28°C was deemed too warm for wearing a full suit
+B) The temperature that perfectly balances comfort with passive-aggressive thermostat wars
+C) 28°C (82.4°F)
+D) Whatever Facilities decides, and they are not budging
 
-**Correct answer: A) 28°C (82.4°F)**
+**Correct answer: C) 28°C (82.4°F)**
 
-> Launched in 2005. Suits were banned. Short sleeves encouraged. Energy consumption dropped. Meanwhile, your office thermostat argument enters its 17th consecutive quarter.
+> Launched in 2005. Suits were banned. Short sleeves encouraged. Energy consumption dropped. Meanwhile, the office thermostat argument enters its 17th consecutive quarter.
+
+> The Cool Biz campaign, launched in 2005 by the Ministry of the Environment, mandated 28°C (82.4°F) as the standard office air-conditioning temperature during summer. The policy also relaxed dress codes: no ties, no jackets. The result: an estimated 1.14 million tonnes of CO₂ reduction annually. What makes this genuinely interesting: it was purely voluntary (no fines, no enforcement). Companies just… did it. The Japanese term for this is “keizoku” — continuous improvement through social consensus, not regulation. Your compliance department has never heard of it.<br><br><a href="https://en.wikipedia.org/wiki/Cool_Biz_campaign" target="_blank" rel="noopener">→ Wikipedia — Cool Biz campaign</a>
 
 ---
 
-### Q3 — THE FOURTH "R"
+### Q3
 
-The Japanese concept *Mottainai* (roughly: "what a waste!") adds a fourth "R" to the classic Reduce, Reuse, Recycle. What is it?
+**The Japanese concept <em>Mottainai</em> ("what a waste!") adds a fourth "R" to the classic Reduce, Reuse, Recycle. What is it?**
 
-A) Respect
-B) Regret — the emotion you feel when Compliance rejects your expense report
+A) Regret — the emotion you feel when you accidentally throw away a recyclable
+B) Respect
 C) Returns — as in, "our ESG fund's quarterly"
-D) Restructuring — Japan's favourite corporate verb, applicable to anything
+D) Restructuring — applicable to anything, anywhere, forever
 
-**Correct answer: A) Respect**
+**Correct answer: B) Respect**
 
-> Nobel laureate Wangari Maathai popularised it. The fourth R is Respect — for the Earth's resources. Not to be confused with Respect, the quarterly town hall where leadership thanks you for record profits while announcing a hiring freeze.
+> Nobel laureate Wangari Maathai popularised it. The fourth R is Respect — for the Earth’s resources. Not to be confused with the typical corporate announcements.
+
+> "Mottainai" (“what a waste”) is a Japanese expression that environmental activist and Nobel Peace Prize laureate Wangari Maathai popularised globally. She identified Respect as the fourth R — for the Earth’s finite resources. The Japanese Ministry of Foreign Affairs officially adopted the Mottainai Campaign, and the concept was promoted at the 2008 G8 Hokkaido Toyako Summit. The existing three Rs (Reduce, Reuse, Recycle) were enshrined in Japanese law in the 2000 Basic Act for Establishing a Sound Material-Cycle Society. Respect was added not by legislation but by cultural consensus — the hardest kind of regulation to draft.<br><br><a href="https://www.mofa.go.jp/policy/economy/summit/2008/kids/eco/index_02.html" target="_blank" rel="noopener">→ MOFA — Mottainai Campaign</a>
 
 ---
 
-### Q4 — THE 85% THAT ISN'T
+### Q4
 
-Japan reports a plastic recycling rate of ~85%. However, under international standards for *actual material* recycling (not incineration), the real figure is approximately:
+**Japan reports a plastic recycling rate of about 85%. Under international standards for <em>actual material</em> recycling, the real figure is approximately:**
 
-A) ~24%
+A) A rate that varies depending on how you define <em>recycling</em> and <em>plastic</em>
 B) ~62% — and the missing 23% was reclassified as "strategic thermal redeployment"
-C) ~85%, because Japan defined recycling to include burning things for electricity, and who's going to argue with a sovereign nation's statistical methodology?
-D) A rate that "varies depending on how you define the word *recycling*, the word *plastic*, and the word *Japan*"
+C) ~85%, because Japan defined recycling to include burning things for electricity
+D) ~24%
 
-**Correct answer: A) ~24%**
+**Correct answer: D) ~24%**
 
-> The 85% figure includes "thermal recycling" — i.e., burning plastic for energy. The EU calls this "energy recovery," not recycling. Welcome to ESG data interpretation: where every percentage point has a footnote, and that footnote has a sub-footnote.
+> The 85% figure includes "thermal recycling" — i.e., burning plastic for energy. The EU calls this "energy recovery." Welcome to ESG data: where every percentage has a footnote, and that footnote has a sub-footnote.
 
----
-
-### Q5 — FOSSIL FUEL FINANCING
-
-In 2024, Japan's three megabanks (MUFG, SMBC, Mizuho) accounted for what share of *global* fossil fuel financing?
-
-A) ~12% (USD 106 billion)
-B) "A figure we're not at liberty to disclose, but rest assured our net-zero commitments remain on track"
-C) ~3%, because they also financed some solar panels, which mathematically cancels out the LNG terminals
-D) Enough to make your ESG team's quarterly slide deck physically vibrate with tension
-
-**Correct answer: A) ~12% (USD 106 billion)**
-
-> All three megabanks have publicly committed to net-zero by 2050. They also topped global fossil fuel financing league tables in 2024. This is not a contradiction — this is *transition finance*, and it comes with a very detailed methodology document you're welcome to read.
+> Japan reports a plastic recycling rate of approximately 85%. This figure has been widely cited in corporate ESG reports and government communications. However, it includes “thermal recycling” — incinerating plastic waste to generate energy. Under international standards that measure actual material reprocessing (what the EU calls “material recycling”), Japan’s real rate is approximately 24%. The remaining ~61% is either landfilled, incinerated without energy recovery, or exported. Japan generates more plastic packaging waste per capita than any country except the United States.<br><br><a href="https://circulareconomy.earth/publications/how-japan-is-using-the-circular-economy-to-recycle-plastics" target="_blank" rel="noopener">→ Circular Economy Earth — Japan plastics analysis</a>
 
 ---
 
-### Q6 — BIG NUMBER ENERGY
+### Q5
 
-Japan's Green Transformation (GX) strategy estimates how much combined public-private investment is needed over the next 10 years?
+**As of 2024, Japan accounts for approximately what share of the global climate transition bond market?**
 
-A) 150 trillion yen (~USD 1 trillion)
+A) ~70%
+B) ~25%, though mostly limited to the domestic retail market
+C) ~5%, because Japan historically prefers equity financing for decarbonisation
+D) 0% — Japan missed the filing deadline for the UN's climate taxonomy
+
+**Correct answer: A) ~70%**
+
+> The government's Green Transformation (GX) program has pioneered the space, helping hard-to-abate sectors fund their decarbonisation journey. The Japanese government and major banks are leading global efforts to establish clear frameworks for transition finance.
+
+> In 2024, Nomura reported that Japan accounted for nearly 70% of global transition bond issuance. Through its Green Transformation (GX) program, Japan has pioneered transition finance to help hard-to-abate sectors like steel, shipping, and chemicals fund their decarbonisation journey. The Japanese government and major banks are leading global efforts to establish clear frameworks for transition finance, ensuring heavy industries can transition rather than just divesting.<br><br><a href="https://www.nomuraconnects.com/focused-thinking-posts/japan-pioneered-transition-bonds-but-needs-demand-to-grow-the-market" target="_blank" rel="noopener">→ Nomura — Japan Transition Bonds</a>
+
+---
+
+### Q6
+
+**Japan's Green Transformation (GX) strategy estimates how much combined public-private investment over the next 10 years?**
+
+A) 50 trillion yen, plus whatever is left in the "miscellaneous" fund
 B) "More than last year's budget but less than the GDP of a medium-sized planet"
-C) 50 trillion yen, plus whatever's left in the discretionary slush fund marked 'miscellaneous industrial policy'
-D) The exact amount that sounds plausible in a pitch book but impossible in a board meeting
+C) 150 trillion yen (~USD 1 trillion)
+D) The exact amount that sounds plausible in a pitch book
 
-**Correct answer: A) 150 trillion yen (~USD 1 trillion)**
+**Correct answer: C) 150 trillion yen (~USD 1 trillion)**
 
-> That's roughly 3% of GDP annually, targeting 14–16 industrial sectors including hydrogen, offshore wind, and next-gen nuclear. Somewhere in Tokyo, a PM is writing a PowerPoint slide titled "Massive Addressable Market." It's 42 pages. You are on slide 6.
+> That is about 3% of GDP annually, targeting 14–16 industrial sectors including hydrogen, offshore wind, and next-generation nuclear. Somewhere in Tokyo, a PM is building a deck titled "Massive Addressable Market."
 
----
-
-### Q7 — CAN YOU CALL IT "ESG"?
-
-Under Japan's FSA rules, can a fund market itself as an "ESG Fund" if its *only* ESG strategy is negative screening (e.g., "we don't invest in tobacco")?
-
-A) No — ESG must be a primary selection factor with disclosed targets
-B) Yes, provided the fund name also includes the word "sustainable," "green," or "future" — ideally all three
-C) Yes, because negative screening technically qualifies under the 2018 guidance, the 2021 addendum, and the unwritten rule that nobody actually reads fund prospectuses
-D) No, unless the marketing deck uses a green colour palette and a photo of a wind turbine, in which case the FSA may grant a provisional aesthetic waiver
-
-**Correct answer: A) No — ESG must be a primary selection factor with disclosed targets**
-
-> The FSA tightened rules specifically to combat greenwashing. Simply excluding tobacco and weapons manufacturers no longer cuts it. You need stated targets, reference benchmarks, and ongoing disclosure. If this news makes you nervous, perhaps review your fund's prospectus.
+> Japan’s Green Transformation (GX) strategy, adopted in February 2023, estimates a need for 150 trillion yen (~USD 1 trillion) in combined public and private investment over 10 years. This is approximately 3% of Japan’s GDP annually, targeting 14–16 industrial sectors including hydrogen, offshore wind, ammonia co-firing, next-generation nuclear, and EV batteries. The funding mechanism is a world first: sovereign climate transition bonds (GX JGBs) issued by the government, which will be repaid through future carbon auction revenues (GX-ETS) and a fossil fuel levy starting in 2028. If the carbon price does not rise as projected, the levy will be adjusted. If emitters do not pay, the levy will be adjusted. If the mechanism fails… well, you know how sovereign debt works.<br><br><a href="https://www.meti.go.jp/policy/energy_environment/global_warming/transition/climate.transition.bond.allocation.impact.report.eng.pdf" target="_blank" rel="noopener">→ METI — GX Transition Bond Report</a>
 
 ---
 
-### Q8 — SOVEREIGN PIONEER
+### Q7
 
-In February 2024, Japan became the world's first sovereign issuer of climate *transition* bonds. How does the government plan to repay the ¥20 trillion debt?
+**Under Japan's FSA rules, can a fund market itself as an "ESG Fund" if its <em>only</em> strategy is negative screening (e.g., "we do not invest in tobacco")?**
 
-A) Revenue from future GX-ETS carbon auctions and the 2028 fossil fuel levy
-B) "Growth will pay for it" — a sentence that has never backfired in the history of sovereign debt
-C) By issuing additional transition bonds to repay the original transition bonds, in a beautiful ouroboros of sustainable finance
-D) The bonds mature in 2050 alongside the net-zero target, at which point the problem becomes someone else's bonus calculation
+A) Yes, provided the fund name also includes "sustainable" or "green"
+B) No — ESG must be a primary selection factor with disclosed targets
+C) Yes, because negative screening qualifies under the 2018 guidance
+D) No, unless the marketing deck uses a green colour palette and wind turbines
 
-**Correct answer: A) Revenue from future GX-ETS carbon auctions and the 2028 fossil fuel levy**
+**Correct answer: B) No — ESG must be a primary selection factor with disclosed targets**
 
-> A genuine closed-loop funding mechanism: tax carbon emitters, use proceeds to repay the bonds that funded decarbonisation. Whether this works depends on carbon prices actually rising, emitters actually paying, and politicians actually letting the mechanism run. What could go wrong?
+> The FSA tightened rules to combat greenwashing. Simply excluding tobacco and weapons manufacturers no longer cuts it. You need stated targets, reference benchmarks, and ongoing disclosure.
+
+> In 2022–2023, Japan’s Financial Services Agency (FSA) introduced some of the world’s strictest anti-greenwashing rules for investment funds. Under the revised guidelines, a fund can only market itself as an “ESG Fund” if ESG factors are a primary selection criterion with disclosed targets, reference benchmarks, and ongoing disclosure obligations. Negative screening alone (e.g., “we do not invest in tobacco”) is insufficient. The FSA also introduced the world’s first Code of Conduct for ESG Evaluation and Data Providers in December 2022. The motivation: concern that a significant portion of the ~600 trillion yen classified as “sustainable investments” in Japan may not meet international standards.<br><br><a href="https://www.morganlewis.com/pubs/2024/07/esg-investments-the-asia-pacific-regulatory-perspective" target="_blank" rel="noopener">→ Morgan Lewis — ESG APAC Regulatory Perspective</a>
+
+---
+
+### Q8
+
+**Japan became the world's first sovereign issuer of climate transition bonds, in February 2024. How will the ¥20 trillion debt be repaid?**
+
+A) By issuing additional transition bonds to repay the original ones
+B) "Growth will pay for it" — a sentence that has never backfired in sovereign debt
+C) The bonds mature in 2050 alongside the net-zero target
+D) Revenue from future GX-ETS carbon auctions and the 2028 fossil fuel levy
+
+**Correct answer: D) Revenue from future GX-ETS carbon auctions and the 2028 fossil fuel levy**
+
+> A genuine closed-loop mechanism: tax carbon emitters, use the proceeds to repay the bonds that funded decarbonisation. Whether this works depends on carbon prices actually rising, emitters actually paying, and politicians letting the mechanism run.
+
+> In February 2024, Japan became the world’s first sovereign issuer of climate transition bonds (GX JGBs), raising 20 trillion yen (~USD 140 billion). Unlike green bonds, which typically finance already-commercialised assets, over 50% of transition bond proceeds are allocated to R&D for future decarbonisation technologies (hydrogen, ammonia, carbon capture, next-gen solar). The repayment mechanism is a genuine closed-loop system: revenue from the GX-ETS carbon auction and a fossil fuel levy (introduced 2028) flows back into a dedicated account to service the bonds. This structure has never been tried at sovereign level. Whether it works depends on three variables: carbon prices rising, emitters paying, and politicians not raiding the account. The odds are not terrible, but they are not great either — which is, you will note, the story of most climate policy.<br><br><a href="https://www.meti.go.jp/policy/energy_environment/global_warming/transition/climate.transition.bond.allocation.impact.report.eng.pdf" target="_blank" rel="noopener">→ METI — GX Transition Bond Report</a>
 
 ---
 
