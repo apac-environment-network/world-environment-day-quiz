@@ -36,10 +36,7 @@ describe('t()', () => {
     expect(t(UI.ja, 'questionN', { n: 1, total: 8 })).toBe('\u7B2C1\u554F / \u51688\u554F');
   });
 
-  it('works with Chinese translations', () => {
-    expect(t(UI.zh, 'correct')).toBe('\u6B63\u786E');
-    expect(t(UI.zh, 'questionN', { n: 1, total: 8 })).toBe('\u7B2C1\u9898 / \u51718\u9898');
-  });
+
 });
 
 // ==========================================================
@@ -48,18 +45,12 @@ describe('t()', () => {
 describe('UI translations', () => {
   const enKeys = Object.keys(UI.en).sort();
   const jaKeys = Object.keys(UI.ja).sort();
-  const zhKeys = Object.keys(UI.zh).sort();
-
   it('ja has all en keys', () => {
     expect(jaKeys).toEqual(enKeys);
   });
 
-  it('zh has all en keys', () => {
-    expect(zhKeys).toEqual(enKeys);
-  });
-
   it('no key has empty string', () => {
-    for (const lang of ['en', 'ja', 'zh']) {
+    for (const lang of ['en', 'ja']) {
       for (const [k, v] of Object.entries(UI[lang])) {
         expect(v, `${lang}.${k} is empty`).toBeTruthy();
       }
@@ -127,24 +118,24 @@ describe('getTier()', () => {
 // filterQuestions() — locale filtering
 // ==========================================================
 describe('filterQuestions()', () => {
-  it('returns all questions for tk location', () => {
+  it('returns all 8 questions for tk location', () => {
     const result = filterQuestions(QUESTIONS, 'tk');
     expect(result).toHaveLength(8);
   });
 
-  it('returns all questions for sg location', () => {
+  it('returns 6 common questions for sg location (no SG-specific)', () => {
     const result = filterQuestions(QUESTIONS, 'sg');
-    expect(result).toHaveLength(8);
+    expect(result).toHaveLength(6);
   });
 
-  it('returns all questions for hk location', () => {
+  it('returns 6 common questions for hk location (no HK-specific)', () => {
     const result = filterQuestions(QUESTIONS, 'hk');
-    expect(result).toHaveLength(8);
+    expect(result).toHaveLength(6);
   });
 
   it('questions have valid locale patterns', () => {
     for (const q of QUESTIONS) {
-      expect(['all', 'tk', 'sg', 'hk']).toContain(
+      expect(['all', 'tk']).toContain(
         Array.isArray(q.locale) ? q.locale[0] : q.locale
       );
     }
@@ -175,14 +166,12 @@ describe('shuffleQuestionOptions()', () => {
     const correctKey = shuffled.correct;
     expect(shuffled.en.options[correctKey]).toBe(q.en.options[q.correct]);
     expect(shuffled.ja.options[correctKey]).toBe(q.ja.options[q.correct]);
-    expect(shuffled.zh.options[correctKey]).toBe(q.zh.options[q.correct]);
   });
 
   it('has all 4 options after shuffle', () => {
     const shuffled = shuffleQuestionOptions(QUESTIONS[0]);
     expect(Object.keys(shuffled.en.options)).toEqual(['A', 'B', 'C', 'D']);
     expect(Object.keys(shuffled.ja.options)).toEqual(['A', 'B', 'C', 'D']);
-    expect(Object.keys(shuffled.zh.options)).toEqual(['A', 'B', 'C', 'D']);
   });
 
   it('does not lose or duplicate option values', () => {
@@ -222,8 +211,8 @@ describe('getUid()', () => {
 // QUESTIONS data integrity
 // ==========================================================
 describe('QUESTIONS data', () => {
-  it('has exactly 12 questions (6 common, 2 tk, 2 sg, 2 hk)', () => {
-    expect(QUESTIONS).toHaveLength(12);
+  it('has exactly 8 questions (6 common, 2 tk-only)', () => {
+    expect(QUESTIONS).toHaveLength(8);
   });
 
   it('each question has required fields', () => {
@@ -232,14 +221,13 @@ describe('QUESTIONS data', () => {
       expect(q.correct).toMatch(/^[A-D]$/);
       expect(q.en).toBeDefined();
       expect(q.ja).toBeDefined();
-      expect(q.zh).toBeDefined();
     }
   });
 
   it('each QText has title, options, joke, explainer', () => {
     for (const q of QUESTIONS) {
-      for (const lang of ['en', 'ja', 'zh']) {
-        const text = q[lang as 'en' | 'ja' | 'zh'];
+      for (const lang of ['en', 'ja']) {
+        const text = q[lang as 'en' | 'ja'];
         expect(text.title, `Q${q.id} ${lang} title`).toBeTruthy();
         expect(text.joke, `Q${q.id} ${lang} joke`).toBeTruthy();
         expect(text.explainer, `Q${q.id} ${lang} explainer`).toBeTruthy();
@@ -264,10 +252,8 @@ describe('constants', () => {
     expect(OPTION_KEYS).toEqual(['A', 'B', 'C', 'D']);
   });
 
-  it('LOC_NAMES has entries for tk, sg, hk', () => {
+  it('LOC_NAMES has entry for tk', () => {
     expect(LOC_NAMES.tk).toEqual(['office_tk_name', 'office_tk_city']);
-    expect(LOC_NAMES.sg).toEqual(['office_sg_name', 'office_sg_city']);
-    expect(LOC_NAMES.hk).toEqual(['office_hk_name', 'office_hk_city']);
   });
 });
 
@@ -297,14 +283,6 @@ describe('localStorage helpers', () => {
     expect(stored!.lang).toBe('en');
     expect(stored!.answers).toEqual(answers);
     expect(stored!.timestamp).toBeTruthy();
-  });
-
-  it('saveResult works with different languages', () => {
-    saveResult('sg', [], 5, 'ja');
-    const stored = loadStored();
-    expect(stored!.lang).toBe('ja');
-    expect(stored!.location).toBe('sg');
-    expect(stored!.score).toBe(5);
   });
 
   it('loadStored handles corrupted JSON gracefully', () => {

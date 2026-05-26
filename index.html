@@ -203,11 +203,11 @@
 
   <!-- ========== LANGUAGE SCREEN ========== -->
   <div x-show="screen === 'lang'" x-cloak>
-    <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#777;font-size:0.85rem;margin-bottom:1rem;">Language / 言語 / 语言</p>
+    <p style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#777;font-size:0.85rem;margin-bottom:1rem;">Language / 言語</p>
     <div class="lang-toggle">
       <button class="lang-btn" :class="{active: _langPick==='en'}" @click="_langPick='en'; screen='start'">English</button>
       <button class="lang-btn" :class="{active: _langPick==='ja'}" @click="_langPick='ja'; screen='start'">日本語</button>
-      <button class="lang-btn" :class="{active: _langPick==='zh'}" @click="_langPick='zh'; screen='start'">中文</button>
+
     </div>
   </div>
 
@@ -223,14 +223,7 @@
         <span class="location-name" x-text="t('office_tk_name')"></span>
         <span class="location-city" x-text="t('office_tk_city')"></span>
       </div>
-      <div class="location-card" :class="{selected: location==='sg'}" @click="selectLocation('sg')">
-        <span class="location-name" x-text="t('office_sg_name')"></span>
-        <span class="location-city" x-text="t('office_sg_city')"></span>
-      </div>
-      <div class="location-card" :class="{selected: location==='hk'}" @click="selectLocation('hk')">
-        <span class="location-name" x-text="t('office_hk_name')"></span>
-        <span class="location-city" x-text="t('office_hk_city')"></span>
-      </div>
+
     </div>
     <button class="btn-primary" :disabled="!location" @click="startQuiz" x-text="t('startQuiz')"></button>
     <p class="footer-note" x-text="t('privacyNote')"></p>
