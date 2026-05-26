@@ -85,7 +85,7 @@ document.addEventListener('alpine:init', () => {
     get currentText(): QText {
       const q = this.currentQuestion;
       if (!q) return { title: '', options: { A: '', B: '', C: '', D: '' }, joke: '', explainer: '' };
-      return q[this.lang as 'en' | 'ja' | 'zh'] ?? q.en;
+      return q[this.lang as 'en' | 'ja'] ?? q.en;
     },
     get totalQuestions(): number {
       return this.questions.length || 8;
